@@ -6,12 +6,16 @@ public class MaterialBibliografico {
     private String autor;
     private String añoPublicacion;
     private String isbn;
+    private TipoMaterial tipo;
+    private boolean esPrestable;
 
-    public MaterialBibliografico(String titulo, String autor, String añoPublicacion, String isbn) {
+    public MaterialBibliografico(String titulo, String autor, String añoPublicacion, String isbn, TipoMaterial tipo, boolean esPrestable) {
         this.titulo = titulo;
         this.autor = autor;
         this.añoPublicacion = añoPublicacion;
         this.isbn = isbn;
+        this.tipo = tipo;
+        this.esPrestable = esPrestable;
     }
 
     public String getTitulo() {
@@ -31,7 +35,6 @@ public class MaterialBibliografico {
     public String getAñoPublicacion() {
         return añoPublicacion;
     }
-
     public void setAñoPublicacion(String añoPublicacion) {
         this.añoPublicacion = añoPublicacion;
     }
@@ -42,4 +45,22 @@ public class MaterialBibliografico {
     public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
+
+    public TipoMaterial getTipo() {
+        return tipo;
+    }
+    public void setTipo(TipoMaterial tipo) {
+        this.tipo = tipo;
+    }
+
+    public boolean getEsPrestable() {
+        return esPrestable;
+    }
+    public void setEsPrestable(boolean esPrestable) {
+        this.esPrestable = esPrestable;
+    }
+
+
+
+
 }
