@@ -11,6 +11,13 @@ public class Prestamo {
     private Usuario cliente;
     private LocalDate fechaPrestamo;
 
+    public Prestamo(MaterialBibliografico material, Usuario admin, Usuario cliente, LocalDate fechaPrestamo) {
+        this.material = material;
+        this.admin = admin;
+        this.cliente = cliente;
+        this.fechaPrestamo = LocalDate.now();
+    }
+
 
 
 
