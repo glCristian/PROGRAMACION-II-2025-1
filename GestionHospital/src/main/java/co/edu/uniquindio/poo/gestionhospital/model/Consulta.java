@@ -12,6 +12,12 @@ public class Consulta {
     private Collection<String> enfermedades;
     private Collection<String> medicamentos;
 
+    /**
+     * Constructor de la clase
+     * @param fecha
+     * @param paciente
+     * @param doctor
+     */
     public Consulta(LocalDate fecha, Paciente paciente, Doctor doctor) {
         this.fecha = fecha;
         this.paciente = paciente;
@@ -20,7 +26,10 @@ public class Consulta {
         this.medicamentos = new LinkedList<>();
     }
 
-
+    /**
+     * Método para clonar una consulta
+     * @return consultaCLon
+     */
     public Consulta clonarConsulta() {
         Consulta consultaClon = new Consulta(this.fecha, this.paciente, this.doctor);
         consultaClon.enfermedades = new LinkedList<>(this.enfermedades);
@@ -28,7 +37,24 @@ public class Consulta {
         return consultaClon;
     }
 
+    /**
+     * Método para agregar una enfermedad a la consulta
+     * @param enfermedad
+     */
+    public void agregarEnfermedad(String enfermedad) {
+        enfermedades.add(enfermedad);
+    }
 
+    /**
+     * Método para agregar un medicamento a la consulta
+     * @param medicamento
+     */
+    public void agregarMedicamento(String medicamento) {
+        medicamentos.add(medicamento);
+    }
+
+
+    //----------- Gets y Sets de la clase consulta-------------------//
     public LocalDate getFecha() {
         return fecha;
     }
@@ -68,6 +94,7 @@ public class Consulta {
     public void setMedicamentos(Collection<String> medicamentos) {
         this.medicamentos = medicamentos;
     }
+
 
     @Override
     public String toString() {

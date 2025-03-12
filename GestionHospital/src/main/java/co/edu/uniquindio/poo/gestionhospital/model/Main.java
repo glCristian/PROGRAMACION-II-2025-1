@@ -6,19 +6,22 @@ public class Main {
 
     public static void main(String[] args){
 
-        Paciente paciente0 = new Paciente("Carlos", "0", 35);
+        Hospital hospital = new Hospital("Hospital del Quindío");
 
-        Doctor doctor0 = new Doctor("Raul", "doc", 55,"Medicina generla");
+        Paciente paciente0 = new Paciente("Juan", "123", 40);
+        hospital.agregarPaciente(paciente0);
+        hospital.agregarPaciente(new Paciente("María Gómez", "00", 25));
 
-        Consulta consulta0 = new Consulta(LocalDate.of(2015, 03, 11), paciente0, doctor0);
-        consulta0.getEnfermedades().add("Gripa");
-        consulta0.getMedicamentos().add("Acetaminofen");
+        Doctor doctor1 = new Doctor("Octavio", "DR1", 45, "Cardiología");
+        hospital.agregarDoctor(doctor1);
+
+        hospital.agendarCita(LocalDate.now(), "123", "DR1");
+        hospital.agendarCita(LocalDate.of(2026, 10, 5), "123", "DR1");
+        hospital.agendarCita(LocalDate.of(1970, 5, 20), "123", "DR1");
 
 
-        paciente0.getHistorial().agregarConsulta(consulta0);
 
-
-        System.out.println(paciente0.toString());
+        System.out.println(hospital.listarCitasOrdenadasPorFecha());
 
     }
 
