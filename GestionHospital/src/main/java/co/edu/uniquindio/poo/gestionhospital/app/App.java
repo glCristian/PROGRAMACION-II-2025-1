@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo.gestionhospital;
+package co.edu.uniquindio.poo.gestionhospital.app;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
